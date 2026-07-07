@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Licenta App</title>
+    <link rel="stylesheet" href="./styles-modern.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="mark">L</span>
+        <div>
+          <strong>Licenta App</strong>
+          <small>invatare pentru licenta</small>
+        </div>
+      </div>
+      <nav aria-label="Sectiuni">
+        <button class="nav active" data-view="materii">Materii</button>
+        <button class="nav" data-view="invatare">Invatare</button>
+        <button class="nav" data-view="test">Test</button>
+        <button class="nav" data-view="simulare">Simulare</button>
+        <button class="nav" data-view="greseli">Greseli</button>
+        <button class="nav" data-view="statistici">Statistici</button>
+      </nav>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <h1 id="view-title">Materii</h1>
+          <p id="view-subtitle">Alege materia si porneste un test scurt.</p>
+        </div>
+        <div class="score-chip">
+          <span id="total-questions">0</span>
+          <small>intrebari</small>
+        </div>
+      </header>
+
+      <section id="materii" class="view active">
+        <div id="subject-grid" class="subject-grid"></div>
+      </section>
+
+      <section id="invatare" class="view">
+        <div class="toolbar">
+          <label>
+            Materie
+            <select id="study-subject"></select>
+          </label>
+          <label>
+            Cauta
+            <input id="study-search" type="search" placeholder="cuvant cheie" />
+          </label>
+        </div>
+        <div id="study-area" class="quiz-area"></div>
+      </section>
+
+      <section id="test" class="view">
+        <div class="toolbar">
+          <label>
+            Materie
+            <select id="test-subject"></select>
+          </label>
+          <button id="start-test" class="primary">Porneste test</button>
+        </div>
+        <div id="test-area" class="quiz-area"></div>
+      </section>
+
+      <section id="simulare" class="view">
+        <div class="toolbar">
+          <label>
+            Numar intrebari
+            <input id="exam-count" type="number" min="10" max="100" value="50" />
+          </label>
+          <button id="start-exam" class="primary">Genereaza simulare</button>
+        </div>
+        <div id="exam-area" class="quiz-area"></div>
+      </section>
+
+      <section id="greseli" class="view">
+        <div class="toolbar">
+          <button id="practice-mistakes" class="primary">Reia greselile</button>
+          <button id="clear-mistakes" class="ghost">Sterge lista</button>
+        </div>
+        <div id="mistakes-list" class="list"></div>
+      </section>
+
+      <section id="statistici" class="view">
+        <div id="stats-grid" class="stats-grid"></div>
+      </section>
+    </main>
+
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
